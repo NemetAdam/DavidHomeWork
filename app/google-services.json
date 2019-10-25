@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "870426098883",
+    "firebase_url": "https://planning-poker-5cdd8.firebaseio.com",
+    "project_id": "planning-poker-5cdd8",
+    "storage_bucket": "planning-poker-5cdd8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870426098883:android:3c5c0a1c1591c5f930f676",
+        "android_client_info": {
+          "package_name": "com.example.adammal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870426098883-r8ikgleab9ean3a020faef3776bq221t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAINIQO0n7eT7irlzVJEkbfXms-jdHpxCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870426098883-r8ikgleab9ean3a020faef3776bq221t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
