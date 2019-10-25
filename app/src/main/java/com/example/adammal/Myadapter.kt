@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import java.util.ArrayList
 import android.content.ClipData.Item
 import android.content.res.ColorStateList
+import com.example.adammal.Global.selectedPosition
 
 
 class Myadapter(private val mDataList: ArrayList<String>) : RecyclerView.Adapter<Myadapter.MyViewHolder>() {
@@ -22,6 +23,15 @@ class Myadapter(private val mDataList: ArrayList<String>) : RecyclerView.Adapter
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.info_text.text = mDataList[position]
+        if (selectedPosition === position)
+            holder.itemView.setBackgroundColor(Color.parseColor("#000000"))
+        else
+            holder.itemView.setBackgroundColor(Color.parseColor("#ffffff"))
+
+        holder.itemView.setOnClickListener {
+            selectedPosition = position
+            notifyDataSetChanged()
+        }
 
 
     }

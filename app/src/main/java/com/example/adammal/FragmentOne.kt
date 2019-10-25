@@ -15,7 +15,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.adammal.UserName.userName
+import com.example.adammal.Global.userName
+import com.example.adammal.Global.vote
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -46,6 +47,7 @@ class FragmentOne : Fragment(){
 
 
 
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -58,6 +60,12 @@ class FragmentOne : Fragment(){
 
         var optionsList : ArrayList<String> = ArrayList()
 
+        /*
+        btn_vote.setOnClickListener(){
+            // itt hivd meg a masodik oldalt, amin az eredmenyek vannak. amiutan raklikkeltel a gombra automatikusan elmentodik a szam, esetleg satirozhatod a kivalasztott mezot pls
+        }
+
+         */
         for(i in 1..10){
             optionsList.add(i.toString())
         }
@@ -71,7 +79,10 @@ class FragmentOne : Fragment(){
             override fun onItemClicked(position: Int, view: View) {
                 currentVote = optionsList.get(position)
 
+
+                addVoteData(currentVote.toString())
                 Toast.makeText(context, "clicked on " + currentVote, Toast.LENGTH_SHORT).show()
+
 
             }
         })
@@ -87,10 +98,10 @@ class FragmentOne : Fragment(){
 
     }
 
-    fun addVoteData(voteInt: Int){
+    fun addVoteData(voteString: String){
         val database = FirebaseDatabase.getInstance()
-        val userReference = database.getReference()
-        userReference.child("UserVote").child(userName).setValue(voteInt)
+        val userReference = database.reference
+        userReference.child("UserVote").child(userName).setValue(voteString)
 
     }
 
@@ -104,7 +115,6 @@ class FragmentOne : Fragment(){
             override fun onChildViewAttachedToWindow(view: View) {
                 view.setOnClickListener {
                     val holder = getChildViewHolder(view)
-                    addVoteData(holder.adapterPosition)
                     onClickListener.onItemClicked(holder.adapterPosition, view)
                 }
             }

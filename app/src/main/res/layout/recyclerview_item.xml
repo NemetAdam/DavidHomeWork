@@ -6,6 +6,7 @@
     android:layout_height="100dp"
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
+    android:background="@drawable/selector_item"
     android:padding="0.5dp"
     android:clickable="true"
     android:focusable="true">
@@ -15,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorPrimary"
+         />
 
 </LinearLayout>

@@ -11,6 +11,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_one.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -54,6 +55,9 @@ class MainActivity : AppCompatActivity() {
                 // Failed to read value
             }
         })
+
+
+
 
         //Ideiglenes gomb hogy tudd megnezni mint ket fragmentet
         //majd az atvalt magatol mikor mindenki szavazott

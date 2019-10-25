@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.adammal.UserName.userName
+import com.example.adammal.Global.userName
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -70,17 +70,9 @@ class FragmentTwo : Fragment(){
         mRecyclerView!!.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
 
         var votesList : ArrayList<User> = ArrayList()
-
-
-
-        // Csak a teszt miatt toltok itt bele adatokat
         votesList= loadWithData()
-
         mAdapter = SummaryAdapter(votesList)
         mRecyclerView!!.adapter = mAdapter
-
-
-        // teszt vege
 
         return rootView
     }
@@ -126,4 +118,5 @@ class FragmentTwo : Fragment(){
         Log.d(TAG, "onDetach")
         super.onDetach()
     }
+
 }

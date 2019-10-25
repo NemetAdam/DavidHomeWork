@@ -16,14 +16,14 @@ import com.google.firebase.database.FirebaseDatabase
 import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import com.example.adammal.UserName.userName
+import com.example.adammal.Global.userName
 
 
 class LoginActivity : AppCompatActivity() {
 
 
-
     var btn_Login : Button? = null
+
     var room:String? = null
 
 
